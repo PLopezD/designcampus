@@ -1,0 +1,137 @@
+body{
+	background-color: purple;
+  height:100%;
+}
+h5{
+  font-weight: 700;
+  font-size: 18px
+
+}
+.section-heading{
+	font-weight: 700;
+	font-size: 40px;
+	color:white;
+}
+.round{
+	border-radius: 10px;
+	margin-bottom:40px;
+}
+select {
+  font-family: sans-serif;
+  background: #E6E6E6;
+  color:black;
+  border: none;
+  height: 20px;
+  width: 150px; 
+  margin: 0px;
+  /*padding-left: 5px;*/
+  font-size: 15px;
+  border-radius: 0px
+
+}
+
+.dropdown{
+	width: 100%;
+	margin-top: 0px;
+	margin-bottom: 20px;
+  text-align: center
+}
+.dtitle {
+  width: 150px; 
+  color:white;
+  text-align: center
+}
+.ddown{
+  margin-bottom:20px; 
+}
+
+.filter__label{
+  color:white;
+}
+.filter-group__label{
+  color:white;
+}
+label {
+  color:white;
+}
+
+.active{
+ opacity: 1;
+ -webkit-transition: all ease .5s;
+ -moz-transition: all ease .5s;
+ transition: all ease .5s;
+}
+.btn span{
+  display:none;
+}
+.active span{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: block;
+  padding: 0px;
+}
+
+button:focus {
+  outline:none !important; 
+}
+.btn{
+  width:100px;
+  height:50px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 450px) {
+  .btn {
+    width: 50px;
+  }
+}
+
+
+
+/*footer*/
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+  margin: 0px;
+  padding: 5px
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: purple;
+}
+
+#footer {
+    text-align: center;
+    height: 50px;
+    background-color: #F7D737;
+  width:100%;
+  position:relative;
+  bottom:0;
+  left:0;
+}

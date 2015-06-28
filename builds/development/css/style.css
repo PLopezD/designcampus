@@ -1,20 +1,19 @@
 body{
-	background-color: purple;
+  background-color: purple;
   height:100%;
 }
 h5{
   font-weight: 700;
   font-size: 18px
-
 }
 .section-heading{
-	font-weight: 700;
-	font-size: 40px;
-	color:white;
+  font-weight: 700;
+  font-size: 40px;
+  color:white;
 }
 .round{
-	border-radius: 10px;
-	margin-bottom:40px;
+  border-radius: 10px;
+  margin-bottom:40px;
 }
 select {
   font-family: sans-serif;
@@ -24,16 +23,15 @@ select {
   height: 20px;
   width: 150px; 
   margin: 0px;
-  /*padding-left: 5px;*/
   font-size: 15px;
   border-radius: 0px
 
 }
-
+/*filter section*/
 .dropdown{
-	width: 100%;
-	margin-top: 0px;
-	margin-bottom: 20px;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 20px;
   text-align: center
 }
 .dtitle {
@@ -61,7 +59,7 @@ label {
  -moz-transition: all ease .5s;
  transition: all ease .5s;
 }
-.btn span{
+.click span{
   display:none;
 }
 .active span{
@@ -85,8 +83,92 @@ button:focus {
   }
 }
 
+/*location filter*/
+#loco{
+  width:100%;
+  display: inline-block;  
+}
+.loco{
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  float:left;
+  display: inline;
+}
+.red{
+  color:red;
+}
 
+#texas{
+  margin-left: 33%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/texas.png") ;
+}
 
+@media (max-width: 1200px) {
+  #texas {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 992px) {
+  #texas {
+    margin-left: 25%;
+  }
+}
+@media only screen and (max-width : 768px) {
+  #texas {
+    margin-left: 20%;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .loco{
+    float:center;
+  width: 70px;
+}
+.loco span{
+  position: absolute;
+  top:10px;
+  left:10px;
+  text-align: inherit;
+}
+  #texas {
+    margin-left: 0%;
+  }
+}
+@media only screen and (max-width : 320px) {
+ #texas {
+    margin-left:0%;
+  }       
+}
+
+#ny span{
+  position: relative;
+  left:25px;
+  top:60px;
+}
+#texas span{
+  position: relative;
+  left:22px;
+  top:40px;
+}
+#ireland span{
+  position: relative;
+  left:22px;
+  top:42px;
+}
+#ny{
+  background-image: url("../img/ny.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#ireland{
+  background-image: url("../img/ireland.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 /*footer*/
 .list-inline {
   padding-left: 0;
@@ -102,36 +184,38 @@ button:focus {
 }
 
 ul.social-buttons {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 ul.social-buttons li a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    font-size: 20px;
-    line-height: 40px;
-    outline: 0;
-    color: #fff;
-    background-color: #222;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  outline: 0;
+  color: #fff;
+  background-color: #222;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
 }
 
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: purple;
+  background-color: purple;
 }
 
 #footer {
-    text-align: center;
-    height: 50px;
-    background-color: #F7D737;
+  text-align: center;
+  height: 50px;
+  background-color: #F7D737;
   width:100%;
   position:relative;
   bottom:0;
   left:0;
 }
+
+

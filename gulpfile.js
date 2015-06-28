@@ -42,6 +42,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest(outputDir + 'js'))
     .pipe(connect.reload())
 });
+
 gulp.task('css', function() {
   gulp.src(cssSources)
     .pipe(concat('style.css'))
@@ -80,3 +81,7 @@ gulp.task('json', function() {
 
 // gulp.task('default', ['html', 'json', 'coffee', 'js', 'compass', 'connect', 'watch']);
 gulp.task('default', ['html', 'json', 'js', 'connect', 'css','watch']);
+
+
+
+

@@ -9,7 +9,14 @@ $('.btn').on('click',function(e){
     $(this).removeClass("active")
   }
 })
-
+$('.loco').on('click',function(e){
+  e.preventDefault()
+  if ($(this).hasClass("active")){
+    $(this).addClass("active")
+  } else {
+    $(this).removeClass("active")
+  }
+})
 
 
 

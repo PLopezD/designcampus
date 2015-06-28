@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    // createImages()
-    Exports.Modules.Gallery.init();
+  Exports.Modules.Gallery.init();
 })
 
 var Exports = {
@@ -11,34 +10,37 @@ Exports.Modules.Gallery = (function($, undefined) {
   var $grid,
   $section,
   $focus,
+  $loco,
   section = [],
   focus = [],
+  loco = [],
 
   // Using shuffle with specific column widths
   columnWidths = {
     1170: 70,
     940: 60,
     724: 42
-},
-gutterWidths = {
+  },
+  gutterWidths = {
     1170: 30,
     940: 20,
     724: 20
-},
+  },
 
-init = function() {
+  init = function() {
     setVars();
     initFilters();
     initShuffle();
-},
+  },
 
-setVars = function() {
+  setVars = function() {
     $grid = $('.js-shuffle');
     $section = $('.js-focus');
     $focus = $('.js-section');
-},
+    $loco = $('.js-loco');
+  },
 
-initShuffle = function() {
+  initShuffle = function() {
     // instantiate the plugin
     $grid.shuffle({
       speed : 250,
@@ -50,38 +52,38 @@ initShuffle = function() {
         // Default to container width
         if ( colW === undefined ) {
           colW = containerWidth;
-      }
-      return colW;
-  },
-  gutterWidth: function( containerWidth ) {
-    var gutter = gutterWidths[ containerWidth ];
+        }
+        return colW;
+      },
+      gutterWidth: function( containerWidth ) {
+        var gutter = gutterWidths[ containerWidth ];
 
         // Default to zero
         if ( gutter === undefined ) {
           gutter = 0;
+        }
+        return gutter;
       }
-      return gutter;
-  }
-});
-},
+    });
+  },
 
-initFilters = function() {
+  initFilters = function() {
     // section
     $section.find('input').on('change', function() {
       var $checked = $section.find('input:checked'),
       groups = [];
-      console.log("launching focus?")
-      // At least one checkbox is checked, clear the array and loop through the checked checkboxes
+      // At least one checkbox is checked, clear the array 
+      // and loop through the checked checkboxes
       // to build an array of strings
       if ($checked.length !== 0) {
         $checked.each(function() {
-            groups.push(this.value);
+          groups.push(this.value);
         });
-    }
-    section = groups;
+      }
+      section = groups;
 
-    filter();
-});
+      filter();
+    });
 
     // focus
     $focus.find('button').on('click', function() {
@@ -99,57 +101,89 @@ initFilters = function() {
       // Remove active on already checked buttons to act like radio buttons
       if ( $alreadyChecked.length ) {
         $alreadyChecked.removeClass( active );
-    }
+      }
 
-    isActive = $this.hasClass( active );
+      isActive = $this.hasClass( active );
 
-    if ( isActive ) {
+      if ( isActive ) {
         checked.push( $this.data( 'filterValue' ) );
-    }
+      }
 
-    focus = checked;
+      focus = checked;
 
-    filter();
-});
-},
+      filter();
+    });
+    $loco.find('div').on('click', function() {
+      console.log("locofind")
+      var $this = $(this),
+      $alreadyChecked,
+      checked = [],
+      active = 'active',
+      isActive;
 
-filter = function() {
+      // Already checked buttons which are not this one
+      $alreadyChecked = $this.siblings('.' + active);
+
+      $this.toggleClass( active );
+
+      // Remove active on already checked buttons to act like radio buttons
+      if ( $alreadyChecked.length ) {
+        $alreadyChecked.removeClass( active );
+      }
+
+      isActive = $this.hasClass( active );
+
+      if ( isActive ) {
+        checked.push( $this.data( 'filterValue' ) );
+      }
+
+      loco = checked;
+
+      filter();
+    });
+  },
+
+  filter = function() {
     if ( hasActiveFilters() ) {
       $grid.shuffle('shuffle', function($el) {
         return itemPassesFilters( $el.data() );
-    });
-  } else {
+      });
+    } else {
       $grid.shuffle( 'shuffle', 'all' );
-  }
-},
+    }
+  },
 
-itemPassesFilters = function(data) {
+  itemPassesFilters = function(data) {
 
     // If a section filter is active
     if ( section.length > 0 && !valueInArray(data.focus, section) ) {
       return false;
-  }
+    }
 
     // If a focus filter is active
     if ( focus.length > 0 && !valueInArray(data.section, focus) ) {
       return false;
-  }
+    }
+    // If a location filter is active
+    if ( loco.length > 0 && !valueInArray(data.loco, loco) ) {
+      return false;
+    }
 
-  return true;
-},
+    return true;
+  },
 
-hasActiveFilters = function() {
-    return focus.length > 0 || section.length > 0;
-},
+  hasActiveFilters = function() {
+    return focus.length > 0 || section.length > 0 || loco.length > 0;
+  },
 
-valueInArray = function(value, arr) {
+  valueInArray = function(value, arr) {
     return $.inArray(value, arr) !== -1;
-};
+  };
 
 
-return {
+  return {
     init: init
-};
+  };
 }(jQuery));
 
 

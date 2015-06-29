@@ -29,12 +29,24 @@ var createImages = function(){
     newDiv.className = 'col-lg-4 col-md-4 col-sm-6 col-xs-12 camper picture-item'
     newDiv   = setTitle(i,newDiv)
     newDiv = setFocus(i,newDiv)
+    newDiv = setLoco(i,newDiv)
     newImg.className = 'img-responsive round'
     newImg.src = "img/Meet our Designcampers S15 with Sections NEW-page-0"+imgNumber+".jpg"
     newDiv.appendChild(newImg)
     var workSection = $('#campers-holder')
     workSection.append(newDiv)
   }
+}
+var setLoco = function(number,div){
+  var nyArray = [40,42,45,46,47,48,55,56,57,58,61]
+  if (number == 43 ||number == 44) {
+    div.dataset['loco'] = "ireland"
+  } else if (nyArray.indexOf(number) !== -1){
+    div.dataset['loco'] = "ny"
+  } else {
+    div.dataset['loco'] = "texas"
+  }
+  return div
 }
 var setFocus = function(number,div){
   var fedArray = [3,7,12,15,19,21,28,33,38,39,42,60,61]

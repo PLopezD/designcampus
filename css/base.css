@@ -1,5 +1,14 @@
 body{
-  background-color: purple;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4e7fd+0,d2a3fb+0,4e3666+69,ebd4fe+100 */
+background: #f4e7fd; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #f4e7fd 0%, #d2a3fb 0%, #4e3666 69%, #ebd4fe 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f4e7fd), color-stop(0%,#d2a3fb), color-stop(69%,#4e3666), color-stop(100%,#ebd4fe)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #f4e7fd 0%,#d2a3fb 0%,#4e3666 69%,#ebd4fe 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #f4e7fd 0%,#d2a3fb 0%,#4e3666 69%,#ebd4fe 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #f4e7fd 0%,#d2a3fb 0%,#4e3666 69%,#ebd4fe 100%); /* IE10+ */
+background: linear-gradient(135deg,  #f4e7fd 0%,#d2a3fb 0%,#4e3666 69%,#ebd4fe 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4e7fd', endColorstr='#ebd4fe',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
   height:100%;
 }
 h5{
@@ -121,22 +130,11 @@ button:focus {
     margin-left: 20%;
   }
 }
-
 /* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-  .loco{
-    float:center;
-  width: 70px;
+@media only screen and (max-width : 650px) {
+  #loco{
+    display: none;
 }
-.loco span{
-  position: absolute;
-  top:10px;
-  left:10px;
-  text-align: inherit;
-}
-  #texas {
-    margin-left: 0%;
-  }
 }
 @media only screen and (max-width : 320px) {
  #texas {

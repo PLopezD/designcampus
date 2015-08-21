@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyHTML = require('gulp-minify-html'),
     jsonminify = require('gulp-jsonminify'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass');
 
 var env,
     jsSources,
@@ -40,16 +41,15 @@ gulp.task('js', function() {
     .pipe(connect.reload())
 });
 
-gulp.task('css', function() {
+gulp.task('sass', function () {
   gulp.src(sassSources)
-    .pipe(concat('style.css'))
-    .pipe(gulpif(env === 'production', uglify()))
-    .pipe(gulp.dest(outputDir + 'css'))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(outputDir+'/css/'))
     .pipe(connect.reload())
 });
 
 gulp.task('watch', function() {
-  gulp.watch(sassSources, ['css']);
+  gulp.watch(sassSources, ['sass']);
   gulp.watch(jsSources, ['js']);
   gulp.watch('./*.html', ['html']);
 });
@@ -69,7 +69,7 @@ gulp.task('html', function() {
 });
 
 
-gulp.task('default', ['html', 'js', 'connect', 'css','watch']);
+gulp.task('default', ['html', 'js', 'connect', 'sass','watch']);
 
 
 

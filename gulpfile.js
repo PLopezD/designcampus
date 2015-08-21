@@ -11,28 +11,25 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 var env,
-    coffeeSources,
     jsSources,
     sassSources,
     htmlSources,
-    jsonSources,
     outputDir,
     sassStyle;
 
 env = process.env.NODE_ENV || 'development';
 
 if (env==='development') {
-  outputDir = 'builds/development/';
+  outputDir = './public/';
   sassStyle = 'expanded';
 } else {
   outputDir = 'builds/production/';
   sassStyle = 'compressed';
 }
 
-jsSources = ['components/scripts/*.js'];
-cssSources = ['css/*.css'];
-htmlSources = [outputDir + '*.html'];
-jsonSources = [outputDir + 'js/*.json'];
+jsSources = ['development/js/*.js'];
+sassSources = ['development/sass/*.scss'];
+htmlSources = ['*.html'];
 
 gulp.task('js', function() {
   gulp.src(jsSources)
@@ -44,7 +41,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src(cssSources)
+  gulp.src(sassSources)
     .pipe(concat('style.css'))
     .pipe(gulpif(env === 'production', uglify()))
     .pipe(gulp.dest(outputDir + 'css'))
@@ -52,35 +49,27 @@ gulp.task('css', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(cssSources, ['css']);
+  gulp.watch(sassSources, ['css']);
   gulp.watch(jsSources, ['js']);
-  gulp.watch('builds/development/*.html', ['html']);
-  gulp.watch('builds/development/js/*.json', ['json']);
+  gulp.watch('./*.html', ['html']);
 });
 
 gulp.task('connect', function() {
   connect.server({
-    root: outputDir,
+    root: "./",
     livereload: true
   });
 });
 
 gulp.task('html', function() {
-  gulp.src('builds/development/*.html')
+  gulp.src('./*.html')
     .pipe(gulpif(env === 'production', minifyHTML()))
     .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
     .pipe(connect.reload())
 });
 
-gulp.task('json', function() {
-  gulp.src('builds/development/js/*.json')
-    .pipe(gulpif(env === 'production', jsonminify()))
-    .pipe(gulpif(env === 'production', gulp.dest('builds/production/js')))
-    .pipe(connect.reload())
-});
 
-// gulp.task('default', ['html', 'json', 'coffee', 'js', 'compass', 'connect', 'watch']);
-gulp.task('default', ['html', 'json', 'js', 'connect', 'css','watch']);
+gulp.task('default', ['html', 'js', 'connect', 'css','watch']);
 
 
 

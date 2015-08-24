@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     jsonminify = require('gulp-jsonminify'),
     concat = require('gulp-concat'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    plumber = require('gulp-plumber');
 
 var env,
     jsSources,
@@ -43,7 +44,8 @@ gulp.task('js', function() {
 
 gulp.task('sass', function () {
   gulp.src(sassSources)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(plumber())
+    .pipe(sass())
     .pipe(gulp.dest(outputDir+'/css/'))
     .pipe(connect.reload())
 });

@@ -166,7 +166,7 @@ Exports.Modules.Gallery = (function($, undefined) {
 $(document).ready(function() {
     // createImages()
   })
-$('.btn').on('click',function(e){
+$('.section_button').on('click',function(e){
   e.preventDefault()
   if ($(this).hasClass("active")){
     $(this).addClass("active")

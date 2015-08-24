@@ -1,6 +1,153 @@
+input[type="checkbox"] {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  vertical-align: middle;
+  background-color: #EEEEEE;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  -webkit-appearance: none;
+  margin-bottom: 5px; }
+  input[type="checkbox"]:focus {
+    outline: 0; }
+  input[type="checkbox"]:after {
+    content: '';
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border: 3px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+    opacity: 0;
+    transform: rotate(-45deg);
+    -webkit-appearance: none; }
+  input[type="checkbox"]:hover::after {
+    -webkit-appearance: none;
+    opacity: 1; }
+  input[type="checkbox"]:checked::after {
+    opacity: 1; }
+
+.grid {
+  padding-left: 65px;
+  border-top: solid 10px #00AEAA; }
+
+.head {
+  width: 100%; }
+  .head h2, .head h3 {
+    margin: 0px;
+    color: #00AEAA;
+    margin-top: 30px; }
+  .head h3 {
+    margin-top: 15px;
+    display: inline-block; }
+  .head .title {
+    width: 50%;
+    display: inline-block; }
+  .head .social {
+    margin-top: 30px;
+    width: 20%;
+    float: right;
+    -webkit-transition: width 500ms ease-out 1s;
+    -moz-transition: width 500ms ease-out 1s;
+    -o-transition: width 500ms ease-out 1s;
+    transition: width 500ms ease-out 1s; }
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+  margin: 0px;
+  padding: 5px; }
+
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+ul.social-buttons {
+  margin-bottom: 0; }
+
+ul.social-buttons li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  background-color: #00AEAA;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  background-color: purple; }
+
+button:focus {
+  outline: 0; }
+
+h5 {
+  margin: 0px; }
+
+.section_button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  margin: 5px;
+  opacity: .5; }
+
+.active {
+  opacity: 1; }
+
+#green {
+  margin-left: 0px;
+  background-color: #128730; }
+
+#red {
+  background-color: #C62717; }
+
+#yellow {
+  background-color: #F6D13F; }
+
+#blue {
+  background-color: #56A9F7; }
+
+#focus span {
+  display: block; }
+
+.site_body {
+  margin-top: 40px;
+  width: 100%; }
+
+#filters {
+  display: inline-block;
+  width: 20%;
+  float: left; }
+
+#campers-holder {
+  display: inline-block;
+  width: 75%; }
+
 .camper {
-  width: 400px;
   display: inline-block; }
   .camper img {
-    width: 400px;
+    width: 310px;
     display: inline-block; }
+
+@media (max-width: 900px) {
+  .site_body {
+    display: block; }
+  #campers-holder {
+    width: 100%;
+    display: block; }
+  #filters {
+    margin-bottom: 30px;
+    width: 100%;
+    display: block; }
+  .grid {
+    padding-left: 10px; } }

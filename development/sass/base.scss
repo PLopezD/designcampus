@@ -44,7 +44,7 @@ input[type="checkbox"] {
 	}
 	&:checked::after{
 		opacity: 1;
-		
+
 	}
 }
 // site header stuff
@@ -171,6 +171,7 @@ h5{
 }
 .camper{
 	display:inline-block;
+	margin-left:10px;
 	img{
 		width:310px;
 		display:inline-block;
@@ -185,6 +186,9 @@ h5{
 		width:100%;
 		display:block;
 	}	
+	.camper img{
+		width: 300px
+	}
 
 	#filters{
 		margin-bottom:30px;

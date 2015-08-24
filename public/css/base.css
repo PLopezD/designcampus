@@ -134,7 +134,8 @@ h5 {
   width: 75%; }
 
 .camper {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 10px; }
   .camper img {
     width: 310px;
     display: inline-block; }
@@ -145,6 +146,8 @@ h5 {
   #campers-holder {
     width: 100%;
     display: block; }
+  .camper img {
+    width: 300px; }
   #filters {
     margin-bottom: 30px;
     width: 100%;

@@ -1,3 +1,2 @@
-# Workflows Course
-
-This project is an example of workflow management for a lynda.com course.
+Design Campus - http://designcamp.us/
+A site to get to know Designcampers

@@ -1,12 +1,12 @@
 {
-  "name": "workflows",
+  "name": "designcampust",
   "version": "0.0.1",
-  "description": "A project to showcase workflows",
+  "description": "a project to learn the names of d-campers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/workflows.git"
+    "url": "https://github.com/PLopezD/designcampus"
   },
-  "author": "Ray Villalobos",
+  "author": "Pablo Lopez Domowicz",
   "devDependencies": {
     "gulp": "^3.6.2",
     "gulp-browserify": "^0.5.0",

@@ -1,2 +1,2 @@
-Design Campus -
-A site to get to know design campers
+Design Campus - http://designcamp.us/
+A site to get to know Designcampers

@@ -1,7 +1,12 @@
 
 $teal:#00AEAA;
+.faker{
 
+
+}
 input[type="checkbox"] {
+	
+		
 	width: 28px;
 	height: 28px;
 	position: relative;
@@ -33,17 +38,13 @@ input[type="checkbox"] {
 		-ms-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
+
 	}
 	&:hover::after {
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
 		opacity: 1;
 	}
 	&:checked::after{
 		opacity: 1;
-
 	}
 }
 
@@ -148,13 +149,9 @@ h5{
 	background-color:#56A9F7;
 }
 #focus {
-	// display:inline-block;
 	margin-top:10px;
-	h5{
-	margin-bottom:10px;
-	}
 	span{
-		display:block;
+		display:inline-block;
 	}
 }
 .site_body{

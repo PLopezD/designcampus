@@ -30,10 +30,6 @@ input[type="checkbox"] {
     -moz-appearance: none;
     appearance: none; }
   input[type="checkbox"]:hover::after {
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     opacity: 1; }
   input[type="checkbox"]:checked::after {
     opacity: 1; }
@@ -129,10 +125,8 @@ h5 {
 
 #focus {
   margin-top: 10px; }
-  #focus h5 {
-    margin-bottom: 10px; }
   #focus span {
-    display: block; }
+    display: inline-block; }
 
 .site_body {
   margin-top: 40px;

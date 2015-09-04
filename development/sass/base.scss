@@ -1,12 +1,58 @@
 
 $primary:#FF7832;
 .faker{
+	// display: block;	
+	// span{
+	// 	width: 28px;
+	// 	height: 28px;
+	// 	position: relative;
+	// 	vertical-align:middle;
+	// 	background-color:#EEEEEE;
+	// 	margin: 0px;
+	// 	margin-bottom:5px;
+	// 	display: inline-block;	
 
+	// 	&:focus {outline:0;}
 
+	// 	&:after {
+	// 		content: '';
+	// 		width: 9px;
+	// 		height: 5px;
+	// 		position: absolute;
+	// 		top: 8px;
+	// 		left: 8px;
+	// 		border: 3px solid #fcfff4;
+	// 		border-top: none;
+	// 		border-right: none;
+	// 		opacity: 0;
+	// 		-ms-transform: rotate(-45deg); 
+	// 		-webkit-transform:rotate(-45deg);
+	// 		transform: rotate(-45deg);
+	// 	}
+	// 	&:hover::after {
+	// 		opacity: 1;
+	// 	}
+	// 	&:checked + span {
+	// 		content: '';
+	// 		width: 9px;
+	// 		height: 5px;
+	// 		position: absolute;
+	// 		top: 8px;
+	// 		left: 8px;
+	// 		border: 3px solid #fcfff4;
+	// 		border-top: none;
+	// 		border-right: none;
+	// 		opacity: 0;
+	// 		-ms-transform: rotate(-45deg); 
+	// 		-webkit-transform:rotate(-45deg);
+	// 		transform: rotate(-45deg);
+	// 	}
+	// }
+	
+	
 }
 input[type="checkbox"] {
-	
-		
+	// display:none;
 	width: 28px;
 	height: 28px;
 	position: relative;
@@ -15,6 +61,7 @@ input[type="checkbox"] {
 	margin-bottom:5px;
 	-webkit-appearance: none;
 	-ms-appearance: none;
+	-o-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 
@@ -40,13 +87,16 @@ input[type="checkbox"] {
 		appearance: none;
 
 	}
+
 	&:hover::after {
 		opacity: 1;
 	}
-	&:checked::after{
+	&:checked::after {
 		opacity: 1;
 	}
+	
 }
+
 
 // site header stuff
 .grid{
@@ -130,7 +180,7 @@ h5{
 	width:40px;
 	border:none;
 	margin:5px;
-	opacity:.5;
+	opacity:.3;
 }
 .active{
 	opacity:1;
@@ -153,8 +203,20 @@ h5{
 }
 #focus {
 	margin-top:10px;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;     
+
+
 	span{
-		display:inline-block;
+		display: -webkit-box;      
+		display: -moz-box;         
+		display: -ms-flexbox;      
+		display: -webkit-flex;     
+		display: flex;     
+
 	}
 }
 .site_body{
@@ -176,8 +238,8 @@ h5{
 .camper{
 	display:inline-block;
 	margin-left:10px;
-		width:310px;
-		height:221px;
+	width:310px;
+	height:221px;
 	img{
 		width:310px;
 		height:221px;
@@ -193,8 +255,10 @@ h5{
 		width:100%;
 		display:block;
 	}	
-	.camper img{
-		width: 300px
+	.camper{ 
+	img{
+		width:100%;
+	}
 	}
 
 	#filters{
@@ -204,5 +268,11 @@ h5{
 	}
 	.grid{
 		padding-left: 10px;
+	}
+	
+}
+@media (max-width: 1025px) {
+	#green{
+		// margin-left: 5px;
 	}
 }

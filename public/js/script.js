@@ -50,7 +50,6 @@
         });
       }
       section = groups;
-
       filter();
     });
 
@@ -163,7 +162,7 @@
 
 
 $(document).ready(function() {
-    createImages()
+  createImages()
     // Exports.Modules.Gallery.init();
 
   })
@@ -184,6 +183,15 @@ $('.loco').on('click',function(e){
   }
 })
 
+// $('#focus').on('click',function(e){
+//   e.preventDefault()
+//   if ($(this).hasClass("active")){
+//     $(this).addClass("active")
+//   } else {
+//     $(this).removeClass("active")
+//   }
+// })
+
 var createImages = function(){
   for (var i = 3; i <= 70; i++) {
     if (i == 14 || i == 28 || i == 43 || i == 56) { continue; }
@@ -200,7 +208,7 @@ var createImages = function(){
     var workSection = $('#campers-holder')
     workSection.append(newDiv)
   }
-    Exports.Modules.Gallery.init();
+  Exports.Modules.Gallery.init();
 
 }
 var setLoco = function(number,div){
@@ -215,11 +223,11 @@ var setLoco = function(number,div){
   return div
 }
 var setFocus = function(number,div){
-  var fedArray = [3,7,12,15,19,21,28,33,38,39,42,60,61]
-  var visArray =[4,9,14,16,22,23,27,29,31,35,37,43,44,45,50,54]
-  var uxArray =[5, 6,8,10,11,13,17,25,26,30,32,41,46,48,51,52,53,56,58,62]
-  var plmArray =[20,59]
-  var resArray =[24,36,40,47,55,57]
+  var fedArray = [12,13,25,26,27,39,40,41,53,54,62]
+  var visArray =[8,9,20,21,22,36,37,47,48,58,59,61,66,70]
+  var uxArray =[3,4,5,6,7,15,16,17,18,19,29,30,31,32,33,34,35,44,45,46,49,50,51,57,60,63,64,65,67,68,69]
+  var plmArray =[42,55]
+  var resArray =[10,11,23,24,38,52]
   if (fedArray.indexOf(number)>=0) {
     div.dataset['focus'] = "fed"
   } else if (resArray.indexOf(number)>=0){

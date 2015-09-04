@@ -146,9 +146,12 @@ h5 {
 
 .camper {
   display: inline-block;
-  margin-left: 10px; }
+  margin-left: 10px;
+  width: 310px;
+  height: 221px; }
   .camper img {
     width: 310px;
+    height: 221px;
     display: inline-block; }
 
 @media (max-width: 900px) {

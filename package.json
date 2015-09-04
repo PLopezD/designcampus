@@ -2,6 +2,7 @@
   "name": "designcampust",
   "version": "0.0.1",
   "description": "a project to learn the names of d-campers",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/PLopezD/designcampus"

@@ -1,36 +1,33 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-$(document).ready(function() {
-  Exports.Modules.Gallery.init();
-})
+// (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
-var Exports = {
-  Modules : {}
-};
+  var Exports = {
+    Modules : {}
+  };
 
-Exports.Modules.Gallery = (function($, undefined) {
-  var $grid,
-  $section,
-  $focus,
-  $loco,
-  section = [],
-  focus = [],
-  loco = [],
+  Exports.Modules.Gallery = (function($, undefined) {
+    var $grid,
+    $section,
+    $focus,
+    $loco,
+    section = [],
+    focus = [],
+    loco = [],
 
 
-  init = function() {
-    setVars();
-    initFilters();
-    initShuffle();
-  },
+    init = function() {
+      setVars();
+      initFilters();
+      initShuffle();
+    },
 
-  setVars = function() {
-    $grid = $('.js-shuffle');
-    $section = $('.js-focus');
-    $focus = $('.js-section');
-    $loco = $('.js-loco');
-  },
+    setVars = function() {
+      $grid = $('.js-shuffle');
+      $section = $('.js-focus');
+      $focus = $('.js-section');
+      $loco = $('.js-loco');
+    },
 
-  initShuffle = function() {
+    initShuffle = function() {
     // instantiate the plugin
     $grid.shuffle({
       speed : 250,
@@ -158,13 +155,16 @@ Exports.Modules.Gallery = (function($, undefined) {
 }(jQuery));
 
 
+// },{}]},{},[1])
 
 
 
 
 
 $(document).ready(function() {
-    // createImages()
+    createImages()
+    // Exports.Modules.Gallery.init();
+
   })
 $('.section_button').on('click',function(e){
   e.preventDefault()
@@ -184,8 +184,8 @@ $('.loco').on('click',function(e){
 })
 
 var createImages = function(){
-  for (var i = 3; i <= 62; i++) {
-    if (i == 34 || i == 49 || i == 18) { continue; }
+  for (var i = 3; i <= 70; i++) {
+    if (i == 14 || i == 28 || i == 43 || i == 56) { continue; }
     var imgNumber = formatI(i)
     var newDiv = document.createElement('div')
     var newImg = document.createElement('img')
@@ -194,15 +194,17 @@ var createImages = function(){
     newDiv = setFocus(i,newDiv)
     newDiv = setLoco(i,newDiv)
     newImg.className = 'img-responsive round'
-    newImg.src = "img/Meet our Designcampers S15 with Sections NEW-page-0"+imgNumber+".jpg"
+    newImg.src = "public/img/meet_our_designcampers_f15_with_sections-final0"+imgNumber+".png"
     newDiv.appendChild(newImg)
     var workSection = $('#campers-holder')
     workSection.append(newDiv)
   }
+    Exports.Modules.Gallery.init();
+
 }
 var setLoco = function(number,div){
   var nyArray = [40,42,45,46,47,48,55,56,57,58,61]
-  if (number == 43 ||number == 44) {
+  if (number == 43 || number == 44) {
     div.dataset['loco'] = "ireland"
   } else if (nyArray.indexOf(number) !== -1){
     div.dataset['loco'] = "ny"
@@ -231,14 +233,16 @@ var setFocus = function(number,div){
   return div
 }
 var setTitle = function(number,div){
-  if (number >= 3 && number <=17) {
+  if (number >= 3 && number <=13) {
     div.dataset['section'] = "yellow"
-  } else if (number > 18 && number <= 33){
+  } else if (number > 14 && number <= 27){
     div.dataset['section'] = "blue"
-  } else if (number > 33 && number <= 48){
+  } else if (number > 27 && number <= 43){
+    div.dataset['section'] = "red"
+  } else if (number > 43 && number <= 55){
     div.dataset['section'] = "green"
   } else {
-    div.dataset['section'] = "red"
+    div.dataset['section'] = "purple"
   }
   return div
 }
@@ -252,5 +256,4 @@ var formatI = function(number){
   return result 
 }
 
-},{}]},{},[1])
 
